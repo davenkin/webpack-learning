@@ -11,7 +11,7 @@ function resolve(dir) {
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distribution')
     },
     module: {
@@ -59,6 +59,18 @@ module.exports = {
                 ]
             }
         ]
+    },
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     },
     plugins: [
         new CleanWebpackPlugin(['distribution']),
