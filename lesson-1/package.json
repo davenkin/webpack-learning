@@ -4,13 +4,16 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --hot --inline --config ./webpack.config.js --mode development"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9"
