@@ -1,5 +1,6 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 function resolve(dir) {
@@ -24,6 +25,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['distribution']),
         new HtmlWebpackPlugin({
             hash: true,
             template: './src/index.html',
