@@ -12,7 +12,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'distribution'),
+        path: path.resolve(__dirname, 'distribution')
     },
     module: {
         rules: [
@@ -21,6 +21,35 @@ module.exports = {
                 loader: 'babel-loader',
                 include: [resolve('src')],
                 exclude: [resolve('node_modules')]
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8000
+                        }
+                    }, {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 30
+                            },
+                            optipng: {
+                                enabled: true
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false
+                            }
+                        }
+                    }
+                ]
             }
         ]
     },
