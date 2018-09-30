@@ -35,7 +35,7 @@ module.exports = {
                         options: {
                             mozjpeg: {
                                 progressive: true,
-                                quality: 30
+                                quality: 90
                             },
                             optipng: {
                                 enabled: true
@@ -49,6 +49,13 @@ module.exports = {
                             }
                         }
                     }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
                 ]
             }
         ]

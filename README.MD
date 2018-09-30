@@ -7,11 +7,7 @@ module
     An @import statement inside of a css/sass/less file.
     An image url in a stylesheet (url(...)) or html (<img src=...>) file.
 
-项目init,private
-babel
-自己的依赖 alice hello world + bob hello world, common hello world -> lodash
 vendor依赖
-大小图片
 css
 
 
