@@ -13,11 +13,7 @@ css
 
 - Babel使用详解(babel入门,babel配置)
 - css处理(scss入门,postcss入门,scope,css module)
-- chunk详解(多入口,多page抽离,共同依赖抽离,vendor依赖抽离,manifest分离)
-- HMR
-- 缓存处理(之hash自己写的代码)
+- chunk详解(多入口,多page抽离,共同依赖抽离,vendor依赖抽离,manifest分离), 缓存处理(之hash自己写的代码)
 - 开发(development)环境 vs 生产(production)环境(多配置文件,webpack-merge)
 - 搭建Webpack 4 + Vuejs 2项目
 - Webpack 4 API的使用
-
-- Spring Boot + Vuejs2单页面应用项目搭建

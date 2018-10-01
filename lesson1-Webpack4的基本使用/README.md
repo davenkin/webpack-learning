@@ -1,3 +1,4 @@
+- 本课程博客地址: [Webpack4基本使用](https://www.jianshu.com/p/b30cf56a431f)
 - 本地安装:`cnpm install`
 - 本地构建:`cnpm run build`
 - 本地运行:`cnpm start`
