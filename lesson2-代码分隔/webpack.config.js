@@ -8,9 +8,12 @@ function resolve(dir) {
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'index': './src/index.js',
+        'index2': './src/index2.js'
+    },
     output: {
-        filename: '[name].[hash].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distribution')
     },
     //use inline-source-map for development:
@@ -47,7 +50,13 @@ module.exports = {
         new CleanWebpackPlugin(['distribution']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            filename: 'index.html' //relative to root of the application
+            filename: 'index.html',//relative to root of the application
+            chunks: ['index','runtime','vendors']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index2.html',
+            filename: 'index2.html',//relative to root of the application
+            chunks: ['index2','runtime','vendors']
         })
     ]
 

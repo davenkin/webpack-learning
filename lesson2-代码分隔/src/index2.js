@@ -15,7 +15,7 @@ element.innerHTML = _.join(result, '-');
 document.body.appendChild(element);
 
 var button = document.createElement('button');
-button.innerHTML = 'Say hello 1';
+button.innerHTML = 'Say hello 2';
 document.body.appendChild(button);
 button.onclick = e =>
     import(/* webpackChunkName: "hello" */ './hello').then(module => {
