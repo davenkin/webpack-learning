@@ -31,6 +31,11 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     plugins: [
         new CleanWebpackPlugin(['distribution']),
         new HtmlWebpackPlugin({
