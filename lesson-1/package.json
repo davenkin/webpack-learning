@@ -1,15 +1,12 @@
 {
   "name": "lesson-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack4基本使用",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --hot --inline --config ./webpack.config.js --mode development"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",

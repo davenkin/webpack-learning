@@ -1,0 +1,3 @@
+- 本地安装:`cnpm install`
+- 本地构建:`cnpm run build`
+- 本地运行:`cnpm start`

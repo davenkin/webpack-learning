@@ -20,5 +20,7 @@ document.body.appendChild(normalSizeImageElement)
 
 let bigSizeImageElement=document.createElement(('img'));
 bigSizeImageElement.src=bigSizeImage;
-document.body.appendChild(bigSizeImageElement)
+document.body.appendChild(bigSizeImageElement);
+
+consol.log("this is a log");
 

@@ -11,8 +11,12 @@ function resolve(dir) {
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'distribution')
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './distribution'
     },
     module: {
         rules: [
