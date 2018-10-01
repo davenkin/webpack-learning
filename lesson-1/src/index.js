@@ -22,5 +22,3 @@ let bigSizeImageElement=document.createElement(('img'));
 bigSizeImageElement.src=bigSizeImage;
 document.body.appendChild(bigSizeImageElement);
 
-consol.log("this is a log");
-

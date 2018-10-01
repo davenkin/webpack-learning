@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --hot --inline --config ./webpack.config.js --mode development"
+    "start": "webpack-dev-server --open --config ./webpack.config.js --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
