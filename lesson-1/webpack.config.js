@@ -1,7 +1,7 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const webpack = require('webpack');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -16,7 +16,8 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './distribution'
+        contentBase: './distribution',
+        hot: true
     },
     module: {
         rules: [
@@ -82,7 +83,8 @@ module.exports = {
             hash: true,
             template: './src/index.html',
             filename: 'index.html' //relative to root of the application
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 
 };

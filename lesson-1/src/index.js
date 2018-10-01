@@ -4,7 +4,7 @@ import normalSizeImage from './assets/normal-image.jpg';
 import bigSizeImage from './assets/big-image.jpg';
 import './main.css'
 
-let result = [1, 2, 3].map((n) => n + 1);
+let result = [1, 2, 4].map((n) => n + 1);
 
 let element = document.createElement('div');
 element.innerHTML = _.join(result, '-');
