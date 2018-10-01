@@ -14,7 +14,11 @@ module.exports = {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'distribution')
     },
+    //use inline-source-map for development:
     devtool: 'inline-source-map',
+
+    //use source-map for production:
+    // devtool: 'source-map',
     devServer: {
         contentBase: './distribution',
         hot: true
