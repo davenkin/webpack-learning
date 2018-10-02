@@ -1,7 +1,6 @@
-- Webpack 4学习笔记之一——基本使用
+- chunk详解(多入口,多page抽离,共同依赖抽离,vendor依赖抽离,manifest分离), 缓存处理(只hash自己写的代码)
+- css处理(cssloader,提取css,scss入门,postcss入门,scope,css module,)
 - Babel使用详解(babel入门,babel配置)
-- css处理(scss入门,postcss入门,scope,css module)
-- chunk详解(多入口,多page抽离,共同依赖抽离,vendor依赖抽离,manifest分离), 缓存处理(之hash自己写的代码)
 - 开发(development)环境 vs 生产(production)环境(多配置文件,webpack-merge)
 - 搭建Webpack 4 + Vuejs 2项目
 - Webpack 4 API的使用
