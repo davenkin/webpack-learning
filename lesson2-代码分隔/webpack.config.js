@@ -1,6 +1,7 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -14,7 +15,7 @@ module.exports = {
     },
     output: {
         filename: '[name].[contenthash].js',
-        chunkFilename:'[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distribution')
     },
     //use inline-source-map for development:
@@ -49,16 +50,22 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['distribution']),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+            analyzerMode: 'static',
+            reportFilename:'bundle-analyzer-report.html'
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',//relative to root of the application
-            chunks: ['index','runtime','vendors']
+            chunks: ['index', 'runtime', 'vendors']
         }),
         new HtmlWebpackPlugin({
             template: './src/index2.html',
             filename: 'index2.html',//relative to root of the application
-            chunks: ['index2','runtime','vendors']
+            chunks: ['index2', 'runtime', 'vendors']
         })
     ]
 
-};
+}
+;
