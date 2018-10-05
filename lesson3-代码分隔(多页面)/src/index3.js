@@ -1,6 +1,9 @@
-import "babel-polyfill";
 import _ from "lodash";
 import axios from "axios";
+import common1 from "./common1";
+import common4 from "./common4";
+import "babel-polyfill";
+
 
 const request = axios.create({
     timeout: 10 * 1000,
@@ -15,13 +18,11 @@ element.innerHTML = _.join(result, '-');
 document.body.appendChild(element);
 
 var button = document.createElement('button');
-button.innerHTML = 'Say hello 2';
+button.innerHTML = 'Say Hello';
 document.body.appendChild(button);
-button.onclick = e =>
-    import(/* webpackChunkName: "hello" */ './hello').then(module => {
-        var hello = module.default;
-
-        hello();
-    });
+button.onclick = e => {
+    common1();
+    common4();
+};
 
 

@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -11,7 +12,8 @@ function resolve(dir) {
 module.exports = {
     entry: {
         'index': './src/index.js',
-        'index2': './src/index2.js'
+        'index2': './src/index2.js',
+        'index3': './src/index3.js'
     },
     output: {
         filename: '[name].[contenthash].js',
@@ -37,15 +39,30 @@ module.exports = {
         ]
     },
     optimization: {
-        runtimeChunk: 'single',
+        runtimeChunk: {
+            "name": "manifest"
+        },
         splitChunks: {
             cacheGroups: {
                 default: false,
                 vendors: false,
+                common: {
+                    chunks: "initial",
+                    minChunks: 2,
+                    enforce: true,
+                    priority: 30
+                },
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
+                    chunks: 'all',
+                    enforce: true,
+                    priority: 20
+                },
+
+                async: {
+                    chunks: "async",
+                    enforce: true,
+                    priority: 3
                 }
             }
         }
@@ -55,18 +72,24 @@ module.exports = {
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
             analyzerMode: 'static',
-            reportFilename:'bundle-analyzer-report.html'
+            reportFilename: 'bundle-analyzer-report.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',//relative to root of the application
-            chunks: ['index', 'runtime', 'vendors']
+            chunks: ['index']
         }),
         new HtmlWebpackPlugin({
             template: './src/index2.html',
             filename: 'index2.html',//relative to root of the application
-            chunks: ['index2', 'runtime', 'vendors']
-        })
+            // chunks: ['index2', 'runtime', 'vendor', 'common']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index3.html',
+            filename: 'index3.html',//relative to root of the application
+            // chunks: ['index3', 'runtime', 'vendor', 'common']
+        }),
+        new webpack.HashedModuleIdsPlugin()
     ]
 
 }
