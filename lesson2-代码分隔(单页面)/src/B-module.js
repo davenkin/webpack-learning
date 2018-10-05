@@ -1,3 +1,5 @@
+import d from './D-module';
 export default () => {
-    console.log('Hello World from Common3!');
+    d();
+    console.log('Hello World from B!');
 };

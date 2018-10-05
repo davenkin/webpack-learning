@@ -1,3 +1,3 @@
 export default () => {
-    console.log('Hello World from Common4!');
+    console.log('Hello World from D!');
 };

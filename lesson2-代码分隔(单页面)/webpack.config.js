@@ -13,6 +13,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distribution')
     },
     //use inline-source-map for development:
@@ -43,8 +44,28 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html'
-        })
-    ]
+        }),
+        new webpack.HashedModuleIdsPlugin()
+
+    ],
+    optimization: {
+        runtimeChunk: {
+            "name": "manifest"
+        },
+        splitChunks: {
+            chunks:'all',
+            cacheGroups: {
+                common: {
+                    minChunks: 2,
+                    name:'commons',
+                    chunks: 'async',
+                    priority: 10,
+                    reuseExistingChunk: true,
+                    enforce: true
+                }
+            }
+        }
+    }
 
 }
 ;
