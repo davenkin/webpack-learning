@@ -12,4 +12,3 @@ import(/* webpackChunkName: "async-b" */ './B-module');
 a();
 g();
 h();
-console.log(jquery);

@@ -9,4 +9,3 @@ import(/* webpackChunkName: "async-c" */ './C-module');
 a();
 f();
 g();
-console.log(lodash.join([1,2], '-'));
