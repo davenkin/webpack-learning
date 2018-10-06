@@ -59,7 +59,52 @@ module.exports = {
         }),
         new webpack.HashedModuleIdsPlugin()
 
-    ]
+    ],
+    // optimization: {
+    // runtimeChunk: {
+    //     "name": "manifest"
+    // },
+    // splitChunks: {
+    //     chunks: 'all',
+    //     minSize:0
+        //     cacheGroups: {
+        // default: false,
+        //         vendors: false,
+        //         common: {
+        //         chunks: "initial",
+        //             minChunks: 2,
+        //             name:'commons',
+        //             enforce: true,
+        //             priority: 30
+        //     },
+        //     // common2: {
+        //     //     chunks: "async",
+        //     //     minChunks: 1,
+        //     //     name:'commons2',
+        //     //     enforce: true,
+        //     //     priority: 30
+        //     // },
+        //     vendor: {
+        //         test: /[\\/]node_modules[\\/]/,
+        //             chunks: 'initial',
+        //             enforce: true,
+        //             priority: 40,
+        //             name:'vendor2'
+        //     },
+        //
+        //     //         cacheGroups: {
+        //     //             common: {
+        //     //                 minChunks: 2,
+        //     //                 name: 'commons',
+        //     //                 chunks: 'async',
+        //     //                 priority: 10,
+        //     //                 reuseExistingChunk: true,
+        //     //                 enforce: true
+        //     //             }
+        // }
+//     }
+// }
+
 
 }
 ;
