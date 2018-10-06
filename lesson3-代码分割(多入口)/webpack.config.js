@@ -47,15 +47,20 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index1.html',
-            filename: 'index1.html'
+            filename: 'index1.html',
+            chunks: ['index1', 'manifest', 'vendor', 'common']
         }),
         new HtmlWebpackPlugin({
             template: './src/index2.html',
-            filename: 'index2.html'
+            filename: 'index2.html',
+            chunks: ['index2', 'manifest', 'vendor', 'common']
+
         }),
         new HtmlWebpackPlugin({
             template: './src/index3.html',
-            filename: 'index3.html'
+            filename: 'index3.html',
+            chunks: ['index3', 'manifest', 'vendor', 'common']
+
         }),
         new webpack.HashedModuleIdsPlugin()
 
@@ -73,8 +78,15 @@ module.exports = {
                     chunks: 'initial',
                     enforce: true,
                     priority: 10,
-                    name:'vendor'
+                    name: 'vendor'
                 },
+                common: {
+                    chunks: "all",
+                    minChunks: 2,
+                    name: 'common',
+                    enforce: true,
+                    priority: 5
+                }
             }
         }
     }
