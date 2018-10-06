@@ -48,24 +48,24 @@ module.exports = {
         new webpack.HashedModuleIdsPlugin()
 
     ],
-    // optimization: {
-    //     runtimeChunk: {
-    //         "name": "manifest"
-    //     },
-    //     splitChunks: {
-    //         chunks:'all',
-    //         cacheGroups: {
-    //             common: {
-    //                 minChunks: 2,
-    //                 name:'commons',
-    //                 chunks: 'async',
-    //                 priority: 10,
-    //                 reuseExistingChunk: true,
-    //                 enforce: true
-    //             }
-    //         }
-    //     }
-    // }
+    optimization: {
+        runtimeChunk: {
+            "name": "manifest"
+        },
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                common: {
+                    minChunks: 2,
+                    name: 'commons',
+                    chunks: 'async',
+                    priority: 10,
+                    reuseExistingChunk: true,
+                    enforce: true
+                }
+            }
+        }
+    }
 
 }
 ;
