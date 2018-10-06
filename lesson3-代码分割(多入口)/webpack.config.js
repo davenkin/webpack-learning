@@ -61,10 +61,20 @@ module.exports = {
 
     ],
     optimization: {
+        runtimeChunk: {
+            "name": "manifest"
+        },
         splitChunks: {
             cacheGroups: {
                 default: false,
-                vendors: false
+                vendors: false,
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'initial',
+                    enforce: true,
+                    priority: 10,
+                    name:'vendor'
+                },
             }
         }
     }
