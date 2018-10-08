@@ -1,6 +1,7 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 function resolve(dir) {
@@ -9,7 +10,10 @@ function resolve(dir) {
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'index': './src/index.js',
+        'index2': './src/index2.js',
+    },
     output: {
         filename: '[name].[contenthash].js',
         chunkFilename: '[name].[contenthash].js',
@@ -21,7 +25,7 @@ module.exports = {
     //use source-map for production:
     // devtool: 'source-map',
     devServer: {
-        contentBase: './distribution',
+        contentBase: './distribution'
     },
     module: {
         rules: [
@@ -32,10 +36,30 @@ module.exports = {
                 exclude: [resolve('node_modules')]
             },
             {
-                test: /\.css$/,
+                test: /\.(s*)css$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            localIdentName: '[name]---[local]---[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [require("autoprefixer")],
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
                 ]
             }
         ]
@@ -52,6 +76,12 @@ module.exports = {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
                     chunks: 'all'
+                },
+                styles: {
+                    name: 'styles',
+                    test: /\.css$/,
+                    chunks: 'all',
+                    enforce: true
                 }
             }
         }
@@ -60,7 +90,17 @@ module.exports = {
         new CleanWebpackPlugin(['distribution']),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            filename: 'index.html' //relative to root of the application
+            filename: 'index.html',
+            chunks: ['index', 'manifest', 'vendors', 'styles']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index2.html',
+            filename: 'index2.html',
+            chunks: ['index2', 'manifest', 'vendors', 'styles']
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[name].[contenthash].css"
         })
     ]
 

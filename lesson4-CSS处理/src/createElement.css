@@ -1,0 +1,26 @@
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.gray {
+    background-color:gray;
+}
+
+
+:global(.deepskyblue){
+    background-color:deepskyblue;
+}
+
+
+:local(.fuchsia){
+    background-color: fuchsia;
+}
+
