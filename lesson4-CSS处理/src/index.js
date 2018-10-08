@@ -1,10 +1,13 @@
 import _ from 'lodash'
-import './main.css'
+import './base.scss'
+import './main.scss'
+import './main2.scss'
 import {createElement} from './createElement'
 
 createElement('yellow');
 createElement('blue');
 createElement('green');
+
 
 
 

@@ -1,5 +1,4 @@
-- css处理(cssloader,提取css,scss入门,postcss入门,scope,css module,)
 - Babel使用详解(babel入门,babel配置)
 - 开发(development)环境 vs 生产(production)环境(多配置文件,webpack-merge)
-- 搭建Webpack 4 + Vuejs 2项目
+- 搭建Webpack 4 + Vuejs 2项目(v15和v14的区别)
 - Webpack 4 API的使用

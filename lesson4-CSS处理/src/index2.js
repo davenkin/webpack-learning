@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import './main.css'
+import './main.scss'
 import {createElement} from './createElement'
 
 createElement('fuchsia');
