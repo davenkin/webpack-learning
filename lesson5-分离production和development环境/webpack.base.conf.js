@@ -18,9 +18,6 @@ module.exports = {
         path: path.resolve(__dirname, 'distribution')
     },
 
-    devServer: {
-        contentBase: './distribution'
-    },
     module: {
         rules: [
             {
