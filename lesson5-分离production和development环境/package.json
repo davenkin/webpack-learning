@@ -4,9 +4,8 @@
   "description": "CSS处理",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
-    "buildDev": "webpack --mode development",
-    "start": "webpack-dev-server --open --config webpack.config.js --mode development"
+    "build": "webpack --config webpack.prod.conf.js",
+    "start": "webpack-dev-server --open --config webpack.dev.conf.js"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -26,7 +25,8 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
     "lodash": "^4.17.11"
