@@ -20,6 +20,24 @@ const webpackConfig = merge(baseWebpackConfig, {
         },
         hot: true
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            localIdentName: '[name]---[local]---[hash:base64:5]'
+                        }
+                    }
+                ]
+            }
+        ]
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

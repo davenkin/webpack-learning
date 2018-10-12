@@ -25,20 +25,6 @@ module.exports = {
                 loader: 'babel-loader',
                 include: [resolve('src')],
                 exclude: [resolve('node_modules')]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            modules: true,
-                            localIdentName: '[name]---[local]---[hash:base64:5]'
-                        }
-                    }
-                ]
             }
         ]
     },
