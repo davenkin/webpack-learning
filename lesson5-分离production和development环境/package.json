@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.conf.js",
-    "start": "webpack-dev-server --open --config webpack.dev.conf.js"
+    "start": "webpack-dev-server --config webpack.dev.conf.js"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
