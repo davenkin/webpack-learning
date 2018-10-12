@@ -29,30 +29,10 @@ module.exports = {
                 exclude: [resolve('node_modules')]
             },
             {
-                test: /\.(s*)css$/,
+                test: /\.css$/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            modules: true,
-                            localIdentName: '[name]---[local]---[hash:base64:5]'
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: [require("autoprefixer")],
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    }
+                    'css-loader'
                 ]
             }
         ]
