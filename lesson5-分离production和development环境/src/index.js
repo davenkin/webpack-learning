@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import styles from './styles.scss'
+import styles from './styles.css'
 
 function createElement(className) {
     let element = document.createElement('div');

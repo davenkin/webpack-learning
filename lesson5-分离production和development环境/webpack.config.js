@@ -17,6 +17,7 @@ module.exports = {
         chunkFilename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'distribution')
     },
+
     devServer: {
         contentBase: './distribution'
     },
@@ -32,7 +33,14 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            localIdentName: '[name]---[local]---[hash:base64:5]'
+                        }
+                    }
                 ]
             }
         ]
