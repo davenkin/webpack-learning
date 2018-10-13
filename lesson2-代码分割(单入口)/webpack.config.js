@@ -4,10 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-function resolve(dir) {
-    return path.join(__dirname, '..', dir)
-}
-
 
 module.exports = {
     entry: './src/index.js',
@@ -29,8 +25,8 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src')],
-                exclude: [resolve('node_modules')]
+                include: [path.resolve(__dirname, 'src')],
+                exclude: [path.resolve(__dirname, 'node_modules')]
             }
         ]
     },

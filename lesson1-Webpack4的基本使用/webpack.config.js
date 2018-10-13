@@ -3,10 +3,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
-function resolve(dir) {
-    return path.join(__dirname, '..', dir)
-}
-
 
 module.exports = {
     entry: './src/index.js',
@@ -28,8 +24,8 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src')],
-                exclude: [resolve('node_modules')]
+                include: [path.resolve(__dirname, 'src')],
+                exclude: [path.resolve(__dirname, 'node_modules')]
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
