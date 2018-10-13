@@ -1,6 +1,6 @@
 <template>
-  <div class="aa">Hello World1! {{msg}}
-    <div class="global-color">Hello World1! {{msg}}</div>
+  <div class="aa">Hello World 1! {{msg}}
+    <div class="global-color">Hello World 1! {{msg}}</div>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div>
-      <router-link to="/foo">Go to Foo</router-link>
-      <router-link to="/bar">Go to Bar</router-link>
+      <router-link to="/helloworld1">Go to HelloWorld1</router-link>
+      <router-link to="/helloworld2">Go to HelloWorld2</router-link>
     </div>
     <router-view/>
 
@@ -23,6 +23,7 @@
 <style>
   @import './reset.css';
   @import './global.css';
+
   img {
     max-width: 100%;
   }
