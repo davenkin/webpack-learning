@@ -23,4 +23,7 @@
 <style>
   @import './reset.css';
   @import './global.css';
+  img {
+    max-width: 100%;
+  }
 </style>

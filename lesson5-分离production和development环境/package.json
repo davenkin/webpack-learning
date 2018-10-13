@@ -1,7 +1,7 @@
 {
-  "name": "lesson4",
+  "name": "lesson5",
   "version": "1.0.0",
-  "description": "CSS处理",
+  "description": "分离production和development环境",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.conf.js",
