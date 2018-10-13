@@ -1,7 +1,5 @@
 <template>
-  <div class="aa">Hello World 1! {{msg}}
-    <div class="global-color">Hello World 1! {{msg}}</div>
-  </div>
+  <div :class="$style.hello">Hello World 1! {{msg}}</div>
 </template>
 
 <script>
@@ -14,8 +12,10 @@
   }
 </script>
 
-<style scoped>
-  .aa {
+<style module lang="scss">
+  .hello {
     background-color: red;
+    width: 300px;
+    height: 300px;
   }
 </style>

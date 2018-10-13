@@ -23,14 +23,28 @@ const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(s*)css$/,
         use: [
           'vue-style-loader',
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
+              modules: true,
               localIdentName: '[name]---[local]---[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [require("autoprefixer")],
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
             }
           }
         ]

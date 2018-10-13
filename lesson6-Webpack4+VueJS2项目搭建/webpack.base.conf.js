@@ -7,7 +7,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'main': './src/main.js'
+    'app': './src/app.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -63,7 +63,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['distribution']),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './src/app.html',
       filename: 'index.html'
     }),
     new VueLoaderPlugin(),
