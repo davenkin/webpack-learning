@@ -1,5 +1,3 @@
-- 搭建Webpack 4 + Vuejs 2项目(v15和v14的区别)
+- 本系列文章github地址: https://github.com/davenkin/webpack-learning
+- 系列博客地址: https://www.jianshu.com/p/b30cf56a431f
 
-https://code.tutsplus.com/tutorials/how-to-build-complex-large-scale-vuejs-applications-with-vuex--cms-30952
-
-检查resolve函数

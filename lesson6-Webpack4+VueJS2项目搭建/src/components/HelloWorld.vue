@@ -1,3 +1,4 @@
+<!--公用组件-->
 <template>
   <div :class="$style.hello">Hello World 1! {{msg}}</div>
 </template>
