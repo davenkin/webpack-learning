@@ -1,6 +1,8 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const baseWebpackConfig = require('./webpack.base.conf');
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -40,6 +42,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]
   },
   optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
     runtimeChunk: {
       "name": "manifest"
     },
